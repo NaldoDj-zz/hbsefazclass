@@ -1587,9 +1587,9 @@ METHOD Setup( cUF, cCertificado, cAmbiente ) CLASS SefazClass
          ::cSoapUrl := SoapUrlNFe( ::aSoapUrlList, "SVAN", cVersao )
       CASE cScan == "SVCAN"
          IF cUF $ "AM,BA,CE,GO,MA,MS,MT,PA,PE,PI,PR"
-            ::cSoapURL := SoapURLNfe( ::aSoapUrlList, "SVRS", cVersao ) // svc-rs não existe
+            ::cSoapURL := SoapURLNfe( ::aSoapUrlList, "SVCRS", cVersao )
          ELSE
-            ::cSoapURL := SoapUrlNFe( ::aSoapUrlList, "SVAN", cVersao ) // svc-an não existe
+            ::cSoapURL := SoapUrlNFe( ::aSoapUrlList, "SVCAN", cVersao )
          ENDIF
       OTHERWISE
          ::cSoapUrl := SoapUrlNfe( ::aSoapUrlList, cUF, cVersao )

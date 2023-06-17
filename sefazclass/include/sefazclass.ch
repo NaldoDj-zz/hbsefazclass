@@ -332,6 +332,7 @@
    { "RS",    "4.00P",  "https://nfe.sefazrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao4.asmx" }, ;
    { "SP",    "4.00P",  "https://nfe.fazenda.sp.gov.br/ws/nfeinutilizacao4.asmx" }, ;
    { "SVAN",  "4.00P",  "https://www.sefazvirtual.fazenda.gov.br/NFeInutilizacao4/NFeInutilizacao4.asmx" }, ;
+   { "SVCAN", "4.00P",  "https://www.svc.fazenda.gov.br/NFeInutilizacao4/NFeInutilizacao4.asmx" }, ;
    { "SVCRS", "4.00P",  "https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao4.asmx" }, ;
    { "SVRS",  "4.00P",  "https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao4.asmx" }, ;
    ;
