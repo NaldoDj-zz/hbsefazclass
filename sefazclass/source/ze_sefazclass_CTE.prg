@@ -394,14 +394,18 @@ METHOD CTeStatusServico( cUF, cCertificado, cAmbiente ) CLASS SefazClass_CTE
    ::cSoapAction  := "cteStatusServicoCT"
    IF ::cVersao == "3.00"
       ::cSoapService := "http://www.portalfiscal.inf.br/cte/wsdl/CteStatusServico"
+      ::cXmlEnvio    := [<consStatServCte versao="] + ::cVersao + [" ] + WS_XMLNS_CTE + [>]
+      ::cXmlEnvio    +=    XmlTag( "tpAmb", ::cAmbiente )
+      ::cXmlEnvio    +=    XmlTag( "xServ", "STATUS" )
+      ::cXmlEnvio    += [</consStatServCte>]
    ELSE
       ::cSoapService := "http://www.portalfiscal.inf.br/cte/wsdl/CTeStatusServicoV4"
+      ::cXmlEnvio    := [<consStatServCTe versao="] + ::cVersao + [" ] + WS_XMLNS_CTE + [>]
+      ::cXmlEnvio    +=    XmlTag( "tpAmb", ::cAmbiente )
+      ::cXmlEnvio    +=    XmlTag( "cUF", ::UFCodigo( ::cUF ) )
+      ::cXmlEnvio    +=    XmlTag( "xServ", "STATUS" )
+      ::cXmlEnvio    += [</consStatServCTe>]
    ENDIF
-
-   ::cXmlEnvio    := [<consStatServCte versao="] + ::cVersao + [" ] + WS_XMLNS_CTE + [>]
-   ::cXmlEnvio    +=    XmlTag( "tpAmb", ::cAmbiente )
-   ::cXmlEnvio    +=    XmlTag( "xServ", "STATUS" )
-   ::cXmlEnvio    += [</consStatServCte>]
    ::XmlSoapPost()
 
    RETURN ::cXmlRetorno
